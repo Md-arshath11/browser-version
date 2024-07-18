@@ -1,0 +1,47 @@
+<html>
+<head>
+    
+    <title>Version</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Browser version check</h1>
+    <h2 id="container"></h1>
+    <script>
+        var userAgent = navigator.userAgent;
+        var browserName = document.getElementById("container");
+       
+        if (userAgent.indexOf("Chrome") != -1) {
+            var start = userAgent.indexOf("Chrome") + 7;
+            var end = userAgent.indexOf(" ", start);
+            var fullVersion = userAgent.substring(start, end);
+            browserName.innerHTML = "Chrome " + fullVersion;
+        }
+        else if(userAgent.indexOf("Safari") != -1) {
+            var start = userAgent.indexOf("Safari") + 7;
+            var end = userAgent.indexOf(" ", start);
+            var fullVersion = userAgent.substring(start, end);
+            browserName.innerHTML = "Safari " + fullVersion;
+        }
+        else if(userAgent.indexOf("Firefox") != -1) {
+            var start = userAgent.indexOf("Firefox") + 7;
+            var end = userAgent.indexOf(" ", start);
+            var fullVersion = userAgent.substring(start, end);
+            browserName.innerHTML = "Firefox" + fullVersion;
+        }
+        else if(userAgent.indexOf("Edge") != -1) {
+            var start = userAgent.indexOf("Edge") + 7;
+            var end = userAgent.indexOf(" ", start);
+            var fullVersion = userAgent.substring(start, end);
+            browserName.innerHTML = "Edge" + fullVersion;
+        }
+        else{
+            browser="unknown";
+            fullVersion="unknown";
+        }
+    </script>
+</body>
+</html>
